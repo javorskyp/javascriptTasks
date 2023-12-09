@@ -2,20 +2,32 @@ const engine1 = {price: 1000}
 const engine2 = {price: 1500}
 const discount = 10;
 
-//String, boolean, Number
 
-if (isNaN (+engine2.price)) {
-    console.log("niepoprawny typ danych")
+const itemsContainer = document.querySelector('#items');
+let counter = 1;
+function addItem(item) {
+  itemsContainer.innerHTML += `<tr>
+          <td>${counter++}</td>
+          <td>${item.title}</td>
+          <td>1</td>
+          <td>${item.price}</td>
+        </tr>`;
+}
+addItem(product1);
+addItem(product2);
+
+// String(), Number(), Boolean() !!
+if (isNaN(+product2.price)) {
+  console.log('Podano niepoprawny typ danych');
 }
 
-let result = engine1.price + engine2.price;
+const total = Number(product1.price) + Number(product2.price);
+const totalWithDiscount = total - 10;
 
-console.log(typeof result);
-
-
-const totalDiscount = result -10;
-
+// cena całkowita
+document.querySelector('#total-price').innerHTML = total;
 
 console.log(`
-Cena przed obnizka: ${result}
-Cena po obnizce ${totalDiscount}`)
+  Cena przed zniżką: ${total}
+  Cena po zniżce: ${totalWithDiscount}
+`);
