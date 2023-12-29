@@ -1,39 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <title>JS Crash Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS crash basic</title>
+  <link rel="stylesheet" href="src/css/styles.css">
 </head>
 <body>
-    <h2>Basket</h2>
+  <h2>Basket</h2>
 
-    <table class="card-table">
-        <thead>
-          <tr>
-            <th>Course</th>
-            <th>Amount</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Javascript</td>
-            <td>1</td>
-            <td>100</td>
-          </tr>
-          <tr>
-            <td>PHP</td>
-            <td>1</td>
-            <td>90</td>
-          </tr>
-          <tr>
-            <td colspan="2" style="text-align: right;"><b>All:</b></td>
-            <td><b>190</b></td>
-          </tr>
-        </tbody>
-      </table>
-<script src="App.js"></script>
+  <table class="card-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Course</th>
+        <th>Amount</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody id="items"></tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3" style="text-align: right;"><b>All:</b></td>
+        <td><b id="total-price">0</b></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <input type="checkbox" id="add-discount">
+  <label for="add-discount">Get lower price</label>
+
+  <p class="discount hidden" id="discount" data-discount-should-be-enabled="1">Lower_Price: <b id="discount-amount">0</b>zł</p>
+
+  <script src="src/js/app.js"></script>
 </body>
 </html>
